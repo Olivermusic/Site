@@ -57,7 +57,7 @@ api_hash = os.environ.get("api_hash")
 bot = os.environ.get("token")
 id = 5072874938
 
-app = Client("hussien", api_id=api_id, api_hash=api_hash, bot_token=bot)
+app = Client("sitetest", api_id=api_id, api_hash=api_hash, bot_token=bot)
 
 REB = ReplyKeyboardMarkup([
 	[("تفعيل التواصل"),("تعطيل التواصل")],
@@ -107,7 +107,7 @@ async def START(c:Client,m:Message):
 		
 
 	
-@app.on_message(filters.command("تفعيل التواصل","") & filters.user(id) & filters.private)
+@app.on_message(filters.command("تفعيل التواصل","دشتغل بوت") & filters.user(id) & filters.private)
 async def OnTw(c:Client,m:Message):
 	db.execute("SELECT * FROM TWSEL WHERE chat_id = ?", (m.chat.id,))
 	result = db.fetchone()
